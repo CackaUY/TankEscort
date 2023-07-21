@@ -13,7 +13,7 @@ public class SpawnMap : MonoBehaviour
     private void Start()
     {
         Instantiate(ground, posMap, Quaternion.identity);
-        InvokeRepeating("SpawnMaps", 0, 10);
+        InvokeRepeating("SpawnMaps", 0, 22);
     }
 
     public void SpawnMaps()

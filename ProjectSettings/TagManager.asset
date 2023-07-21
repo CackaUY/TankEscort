@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - DestroyMap
+  - EnemyTank
+  - EnemyHelicopter
   layers:
   - Default
   - TransparentFX
