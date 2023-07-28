@@ -10,7 +10,6 @@ public class EnemyTank : MonoBehaviour
     [SerializeField] GameObject _enemyTankDestroy;
     [SerializeField] Animator _animator;
 
-   
     public void OnTouchAttack()
     {
         health--;
@@ -19,6 +18,15 @@ public class EnemyTank : MonoBehaviour
     
     private void Update()
     {
+        if (transform.position.y <= -0.3f)
+        {
+            transform.Translate(0, 0.01f, 0);
+        }
+        else
+        {
+            transform.Translate(0, 0, 0);
+        }
+
         if (health <= 0)
         {
             timers -= Time.deltaTime;
@@ -31,6 +39,7 @@ public class EnemyTank : MonoBehaviour
             else
             {
                 _enemyTankDestroy.SetActive(false);
+                Destroy(_enemyTank);
             }
         }
     }

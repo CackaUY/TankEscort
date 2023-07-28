@@ -8,6 +8,8 @@ TagManager:
   - DestroyMap
   - EnemyTank
   - EnemyHelicopter
+  - HelicopterR
+  - HelicopterL
   layers:
   - Default
   - TransparentFX

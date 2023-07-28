@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovementMap : MonoBehaviour
 {
     private float _speedMap = 0.1f;
-    void FixedUpdate()
+    void Update()
     {
         transform.Translate(0, _speedMap * Time.deltaTime, 0);
         

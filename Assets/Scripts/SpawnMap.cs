@@ -1,20 +1,18 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnMap : MonoBehaviour
 {
-    [SerializeField] private GameObject ground;
-    [SerializeField] private GameObject mapSpawn;
+    [SerializeField] private GameObject _ground;
+    [SerializeField] private GameObject _mapSpawn;
 
     private void Start()
     {
-        InvokeRepeating("SpawnMaps", 0, 35f);
-        mapSpawn.transform.position = new Vector3(0, -8.1f, 1000);
+        InvokeRepeating("SpawnMaps", 0, 19.4f);
     }
 
     public void SpawnMaps()
     {
-        Instantiate(ground, mapSpawn.transform);
+        Instantiate(_ground, _mapSpawn.transform);
     }
 
 
