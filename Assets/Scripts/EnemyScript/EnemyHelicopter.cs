@@ -33,6 +33,7 @@ public class EnemyHelicopter : MonoBehaviour
             if (timers > 0)
             {
                 _enemyHelicopterDestroy.SetActive(true);
+                _enemyHelicopterDestroy.transform.Rotate(0, 0, 1f);
                 if (gameObject.CompareTag("HelicopterL"))
                 {
                     _enemyHelicopterDestroy.transform.Translate(-0.05f * Time.deltaTime, 0.1f * Time.deltaTime, 0);

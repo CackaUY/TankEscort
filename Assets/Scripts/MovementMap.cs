@@ -9,7 +9,7 @@ public class MovementMap : MonoBehaviour
     {
         transform.Translate(0, _speedMap * Time.deltaTime, 0);
         
-        if (transform.position.y >= 3f)
+        if (transform.position.y >= 5f)
         {
             Destroy(gameObject);
         }

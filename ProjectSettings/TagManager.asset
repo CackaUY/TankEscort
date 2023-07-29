@@ -10,6 +10,7 @@ TagManager:
   - EnemyHelicopter
   - HelicopterR
   - HelicopterL
+  - Trigger
   layers:
   - Default
   - TransparentFX
