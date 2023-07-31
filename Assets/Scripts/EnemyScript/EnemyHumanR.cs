@@ -18,7 +18,7 @@ public class EnemyHumanR : MonoBehaviour, I_EnemyStatick
         _animator.Play("Explosion");
     }
     
-    private void Update()
+    private void FixedUpdate()
     {
         DestroyEnemy();
         EmenyActive();
@@ -31,7 +31,7 @@ public class EnemyHumanR : MonoBehaviour, I_EnemyStatick
 
     public void DestroyEnemy()
     {
-        if (_enemyHuman.transform.position.y >= 2)
+        if (_enemyHuman.transform.position.y >= 1.2f)
         {
             Destroy(_enemyHuman);
         }

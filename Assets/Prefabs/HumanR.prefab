@@ -561,6 +561,7 @@ MonoBehaviour:
   _human: {fileID: 3649034990962790312}
   _enemyHumanDestroy: {fileID: 3649034991175732913}
   _animator: {fileID: 3649034990859235290}
+  _rocket: {fileID: 3513390182372195327, guid: f0336cc972c75754e9816279f49cb376, type: 3}
 --- !u!1 &3649034991973983552
 GameObject:
   m_ObjectHideFlags: 0
