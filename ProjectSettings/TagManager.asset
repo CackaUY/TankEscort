@@ -11,6 +11,9 @@ TagManager:
   - HelicopterR
   - HelicopterL
   - Trigger
+  - HumanL
+  - HumanR
+  - Rocket
   layers:
   - Default
   - TransparentFX

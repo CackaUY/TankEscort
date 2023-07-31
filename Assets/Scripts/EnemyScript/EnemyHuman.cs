@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyHuman : MonoBehaviour
+public class EnemyHuman : MonoBehaviour, I_EnemyStatick
 {
 
     private int health = 2;
@@ -9,7 +9,8 @@ public class EnemyHuman : MonoBehaviour
     [SerializeField] GameObject _human;
     [SerializeField] GameObject _enemyHumanDestroy;
     [SerializeField] Animator _animator;
-    
+    [SerializeField] GameObject _rocket;
+
 
     public void OnTouchAttack()
     {
@@ -19,7 +20,23 @@ public class EnemyHuman : MonoBehaviour
     
     private void Update()
     {
-        DestroyHuman();
+        DestroyEnemy();
+        EmenyActive();
+        EmenyAttack();
+    }
+
+    
+
+    public void DestroyEnemy()
+    {
+        if (_enemyHuman.transform.position.y >= 2)
+        {
+            Destroy(_enemyHuman);
+        }
+    }
+
+    public void EmenyActive()
+    {
         if (transform.position.x <= -0.25f)
         {
             transform.Translate(0.0050f, 0, 0);
@@ -46,12 +63,20 @@ public class EnemyHuman : MonoBehaviour
         }
     }
 
-    void DestroyHuman()
+    public void EmenyAttack()
     {
-        if(_enemyHuman.transform.position.y >= 2)
+        if (!GameObject.FindGameObjectWithTag("Rocket") && health > 0)
         {
-            Destroy(_enemyHuman);
+            Invoke("SpawnRocket", 3);
+        }
+        else
+        {
+            CancelInvoke("SpawnRocket");
         }
     }
 
+    public void SpawnRocket()
+    {
+        Instantiate(_rocket,gameObject.transform);
+    }
 }

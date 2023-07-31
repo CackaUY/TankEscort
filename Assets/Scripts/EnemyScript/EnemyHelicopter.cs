@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyHelicopter : MonoBehaviour
+public class EnemyHelicopter : MonoBehaviour, I_EnemyStatick
 {
 
     private int health = 8;
@@ -10,13 +10,25 @@ public class EnemyHelicopter : MonoBehaviour
     [SerializeField] GameObject _enemyHelicopterDestroy;
     [SerializeField] Animator _animator;
 
+
+
     public void OnTouchAttack()
     {
         health--;
         _animator.Play("Explosion");
     }
-    
+
     private void Update()
+    {
+        EmenyActive();
+    }
+
+    public void DestroyEnemy()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void EmenyActive()
     {
         if (transform.position.y <= -0.8f)
         {
@@ -51,4 +63,14 @@ public class EnemyHelicopter : MonoBehaviour
         }
     }
 
+
+    public void EmenyAttack()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void SpawnRocket()
+    {
+        throw new System.NotImplementedException();
+    }
 }

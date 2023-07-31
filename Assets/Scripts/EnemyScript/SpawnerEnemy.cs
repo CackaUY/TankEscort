@@ -5,6 +5,8 @@ public class SpawnerEnemy : MonoBehaviour
 {
     [SerializeField] private GameObject _h_Enemy;
     [SerializeField] private GameObject _h_EnemyL;
+    [SerializeField] private GameObject _humanR_Enemy;
+    [SerializeField] private GameObject _humanL_Enemy;
     [SerializeField] private GameObject _t_Enemy;
     [SerializeField] private GameObject _pointSpawn;
 
@@ -15,6 +17,8 @@ public class SpawnerEnemy : MonoBehaviour
         SpawnTankSpawn();
         SpawnHelicopterSpawn();
         SpawnHelicopterSpawnL();
+        SpawnHumanL();
+        SpawnHumanR();
     }
     
 
@@ -71,6 +75,42 @@ public class SpawnerEnemy : MonoBehaviour
         else
         {
             CancelInvoke("SpawnHelicopterL");
+        }
+    }
+
+    //HUMAN Left
+    public void SpawnHumanLPos()
+    {
+        Instantiate(_humanL_Enemy, _pointSpawn.transform);
+    }
+
+    void SpawnHumanL()
+    {
+        if (!GameObject.FindGameObjectWithTag("HumanL"))
+        {
+            Invoke("SpawnHumanLPos", 3);
+        }
+        else
+        {
+            CancelInvoke("SpawnHumanLPos");
+        }
+    }
+
+
+    //HUMAN Right
+    public void SpawnHumanRPos()
+    {
+        Instantiate(_humanR_Enemy, _pointSpawn.transform);
+    }
+    void SpawnHumanR()
+    {
+        if (!GameObject.FindGameObjectWithTag("HumanR"))
+        {
+            Invoke("SpawnHumanRPos", 3);
+        }
+        else
+        {
+            CancelInvoke("SpawnHumanRPos");
         }
     }
 }

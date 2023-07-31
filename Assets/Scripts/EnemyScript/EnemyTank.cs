@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyTank : MonoBehaviour
+public class EnemyTank : MonoBehaviour, I_EnemyStatick
 {
 
     private int health = 5;
@@ -10,6 +10,8 @@ public class EnemyTank : MonoBehaviour
     [SerializeField] GameObject _enemyTankDestroy;
     [SerializeField] Animator _animator;
 
+    
+
     public void OnTouchAttack()
     {
         health--;
@@ -17,6 +19,16 @@ public class EnemyTank : MonoBehaviour
     }
     
     private void Update()
+    {
+        EmenyActive();
+    }
+
+    public void DestroyEnemy()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void EmenyActive()
     {
         if (transform.position.y <= -0.3f)
         {
@@ -44,4 +56,13 @@ public class EnemyTank : MonoBehaviour
         }
     }
 
+    public void EmenyAttack()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void SpawnRocket()
+    {
+        throw new System.NotImplementedException();
+    }
 }
