@@ -9,6 +9,7 @@ public class EnemyHelicopter : MonoBehaviour, I_EnemyStatick
     [SerializeField] GameObject _bodyHelicopter;
     [SerializeField] GameObject _enemyHelicopterDestroy;
     [SerializeField] Animator _animator;
+    [SerializeField] private AudioSource _shotHelicopter;
 
 
 
@@ -16,6 +17,7 @@ public class EnemyHelicopter : MonoBehaviour, I_EnemyStatick
     {
         health--;
         _animator.Play("Explosion");
+        _shotHelicopter.Play();
     }
 
     private void Update()

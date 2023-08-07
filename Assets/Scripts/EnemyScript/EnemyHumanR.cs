@@ -10,12 +10,15 @@ public class EnemyHumanR : MonoBehaviour, I_EnemyStatick
     [SerializeField] GameObject _enemyHumanDestroy;
     [SerializeField] Animator _animator;
     [SerializeField] GameObject _rocket;
+    [SerializeField] private AudioSource _shotPeople;
+    [SerializeField] private AudioSource _shop;
 
 
     public void OnTouchAttack()
     {
         health--;
         _animator.Play("Explosion");
+        _shop.Play();
     }
     
     private void FixedUpdate()
@@ -80,5 +83,6 @@ public class EnemyHumanR : MonoBehaviour, I_EnemyStatick
     public void SpawnRocket()
     {
         Instantiate(_rocket, gameObject.transform);
+        _shotPeople.Play();
     }
 }

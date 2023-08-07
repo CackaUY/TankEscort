@@ -9,13 +9,15 @@ public class EnemyTank : MonoBehaviour, I_EnemyStatick
     [SerializeField] GameObject _tank;
     [SerializeField] GameObject _enemyTankDestroy;
     [SerializeField] Animator _animator;
+    [SerializeField] private AudioSource _shotTank;
 
-    
+
 
     public void OnTouchAttack()
     {
         health--;
         _animator.Play("Explosion");
+        _shotTank.Play();
     }
     
     private void Update()

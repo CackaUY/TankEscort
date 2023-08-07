@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,10 +11,12 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject _tankPlayer;
     [SerializeField] private GameObject _destroyPlayer;
     [SerializeField] private GameObject _sheld;
+    [SerializeField] private AudioSource _shot;
     [SerializeField] private Text _hp;
     private bool _isSheld = false;
     private float timers = 1f;
     private float _timerSheld = 3f;
+
 
     private void Update()
     {
@@ -53,6 +53,11 @@ public class Player : MonoBehaviour
         if (collision.collider.CompareTag("Rocket") && !_isSheld)
         {
             _health--;
+            _shot.Play();
+        }
+        else
+        {
+            _shot.Stop();
         }
     }
 
@@ -79,10 +84,11 @@ public class Player : MonoBehaviour
 
     void MovePlayer()
     {
-        if(transform.position.y >= 0.62f)
+        if (transform.position.y >= 0.62f)
         {
             transform.Translate(0, 0.01f, 0);
-        }else
+        }
+        else
         {
             transform.Translate(0, 0, 0);
         }

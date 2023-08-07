@@ -50,7 +50,7 @@ public class SpawnerEnemy : MonoBehaviour
     {
         if (!GameObject.FindGameObjectWithTag("EnemyHelicopter"))
         {
-            Invoke("SpawnHelicopter", 3);
+            Invoke("SpawnHelicopter", 4);
         }
         else
         {
